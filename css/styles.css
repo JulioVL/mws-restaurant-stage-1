@@ -324,3 +324,11 @@ nav h1 a {
     margin: auto;
   }
 }
+
+/*Accessibility*/
+select:hover,
+select:focus {
+  background-color: #252831;
+  color: white;
+  border: #252831;
+}
