@@ -150,6 +150,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
+  removeFocusOnMap();
 }
 
 /**
@@ -210,3 +211,14 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+removeFocusOnMap = function() {
+  const map =  document.querySelector('#map');
+  const mapMarkers = map.querySelectorAll('.leaflet-marker-icon');
+  const mapControls = map.querySelectorAll('.leaflet-control a');
+  for (var i = 0; i < mapMarkers.length; i++) {
+    mapMarkers[i].tabIndex = -1;
+  }
+  for (var i = 0; i < mapControls.length; i++) {
+    mapControls[i].tabIndex = -1;
+  }
+}
