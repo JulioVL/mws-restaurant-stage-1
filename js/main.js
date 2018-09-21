@@ -211,6 +211,9 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+/**
+ * Set tabIndex to -1 for map elements
+ */
 removeFocusOnMap = function() {
   const map =  document.querySelector('#map');
   const mapMarkers = map.querySelectorAll('.leaflet-marker-icon');
