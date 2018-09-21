@@ -332,3 +332,8 @@ select:focus {
   color: white;
   border: #252831;
 }
+
+#restaurants-list li a:hover,
+#restaurants-list li a:focus {
+  background-color: #EC5C7B;
+}
