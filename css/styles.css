@@ -337,3 +337,7 @@ select:focus {
 #restaurants-list li a:focus {
   background-color: #EC5C7B;
 }
+
+#reviews-list li p:nth-child(1):focus {
+  box-shadow: 0 0 2px 2px #EC5C7B;
+}
