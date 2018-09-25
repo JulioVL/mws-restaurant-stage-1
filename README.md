@@ -25,8 +25,8 @@ $ git clone https://github.com/JulioVL/frontend-nanodegree-arcade-game.git
 ```
 python -m http.server 8000
 ```
-- Finally, visit the site at: [Restaurant Review](http://localhost:8000)
-- Or you can try it on this site: [Restaurant Review](https://juliovl.github.io/mws-restaurant-stage-1/).
+- Finally, visit the site at: [Restaurant Review Localhost](http://localhost:8000)
+- Or you can try it on this site: [Restaurant Review Github](https://juliovl.github.io/mws-restaurant-stage-1/).
 
 
 ## Contributing
