@@ -1,5 +1,7 @@
+let cacheName = 'v2';
+
 self.addEventListener('install', function(event) {
-	var urlsToCache = [
+	const urlsToCache = [
 		'/',
 		'js/dbhelper.js',
 		'js/main.js',
@@ -22,8 +24,21 @@ self.addEventListener('install', function(event) {
 	];
 
 	event.waitUntil(
-		caches.open('restaurant-static-v1').then(function(cache) {
+		caches.open(cacheName).then(function(cache) {
 			return cache.addAll(urlsToCache);
 		})
 	);
 });
+
+// Code by bitsofcode (youtube): https://www.youtube.com/watch?v=BfL3pprhnms
+self.addEventListener('activate', function(event) {
+	event.waitUntil(
+		caches.keys().then(function(cacheNames) {
+			return Promise.all(cacheNames.map(function(thisCacheName) {
+				if (thisCacheName !== cacheName) {
+					return caches.delete(thisCacheName);
+				}
+			}))
+		})
+	)
+})
