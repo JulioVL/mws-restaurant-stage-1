@@ -19,7 +19,11 @@ This a responsive web app, with accessibility standards and offline-first capabi
 - To download the app, you can visit the following website: [Restaurant Review](https://github.com/JulioVL/mws-restaurant-stage-1).
 - Clone it
 ```
-$ git clone https://github.com/JulioVL/frontend-nanodegree-arcade-game.git
+$ git clone https://github.com/JulioVL/mws-restaurant-stage-1.git
+```
+- Switch to main-branch
+```
+$ git checkout main-branch
 ```
 - In that folder, start an HTTP server
 ```
