@@ -150,6 +150,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
+  removeFocusOnMap();
 }
 
 /**
@@ -161,22 +162,28 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name + " image";
+  image.tabIndex = 0;
   li.append(image);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  name.tabIndex = 0;
   li.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.tabIndex = 0;
   li.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  address.tabIndex = 0;
   li.append(address);
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  more.setAttribute("aria-label", restaurant.name + " view details");
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 
@@ -209,3 +216,17 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+/**
+ * Set tabIndex to -1 for map elements
+ */
+removeFocusOnMap = function() {
+  const map =  document.querySelector('#map');
+  const mapMarkers = map.querySelectorAll('.leaflet-marker-icon');
+  const mapControls = map.querySelectorAll('.leaflet-control a');
+  for (var i = 0; i < mapMarkers.length; i++) {
+    mapMarkers[i].tabIndex = -1;
+  }
+  for (var i = 0; i < mapControls.length; i++) {
+    mapControls[i].tabIndex = -1;
+  }
+}
