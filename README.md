@@ -21,10 +21,6 @@ This a responsive web app, with accessibility standards and offline-first capabi
 ```
 $ git clone https://github.com/JulioVL/mws-restaurant-stage-1.git
 ```
-- Switch to main-branch
-```
-$ git checkout main-branch
-```
 - In that folder, start an HTTP server
 ```
 python -m http.server 8000
